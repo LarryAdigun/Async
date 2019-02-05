@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax 1- Text File</title>
+  </head>
+  <body>
+
+    <button id= button> Get Text File </button>
+<!-- Putting the actual text into the webpage -->
+    <div id = "text"></div>
+
+    <script>
+      document.getElementById("button").addEventListener
+      ("click", loadText);
+
+      function loadText() {
+//create xhr object
+      var xhr = new XMLHttpRequest();
+
+//open-type,url/file,async(true or false)
+      xhr.open("GET", "sample.txt", true);
+
+//Optional- Used for Loaders
+      xhr.onprogress = function(){
+        console.log(xhr.readyState);
+      },
+      xhr.onload = function() {
+        if(this.status == 200) {
+          console.log(this.responseText);
+          
+  //Put into the webpage
+          document.getElementById("text").innerHTML = this.responseText;
+          
+//Server wanted to tell you it wa snot right
+        } else if (this.status = 404) {
+            document.getElementById("text").innerHTML = "Not found";
+      }
+
+      }
+      xhr.onerror = function() {
+        console.log()
+      }
+
+
+
+
+      //Remember you have to check for the ready state
+      // xhr.onreadystatechange = function () {
+      //   if(this.readyState == 4 && this.status == 200) {
+      //     //console.log(this.responseText)
+      //   }
+      // }
+      //
+      xhr.send();
+      }
+    </script>
+  </body>
+</html>

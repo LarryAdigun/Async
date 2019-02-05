@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Ajax and XMLHttpRequest</h2>
+    <div id="demo">
+        <button type=button onclick="loadXML()">Load Content</button>
+
+    </div>
+
+    <script>
+        function loadXML() {
+
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            http.open("GET", "myfile.txt", true);
+            http.send();
+        
+        }
+    </script>
+</body>
+
+</html>

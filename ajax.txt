@@ -1,0 +1,12 @@
+- Javascript runs on one thread
+- Synchronous code waits for one function to finish first
+- Asynchronous code request are handed off to a seperate thread that runs outside
+of javascript
+Ajax (Async/XML) Request- communicate by making http request/no need to reload page
+
+Ajax short for "Asynchronous JavaScript And XML")[1][2] is a set of Web development techniques using many web technologies
+ on the client side to create asynchronous Web applications.
+ With Ajax, web applications can send and retrieve data from a server asynchronously
+ (in the background) without interfering with the display and behavior of the existing page.
+
+XHR- API form of an object, provided by browsers Js enviornment
